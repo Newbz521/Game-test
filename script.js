@@ -8,21 +8,21 @@ let gameOver = document.querySelector(".restartContainer");
 gameOver.style.display = "none";
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "a") {
+  if (event.key === "ArrowLeft") {
     // console.log('left');
     movePlayerLeft();
     // createBullet()
   }
-  if (event.key === "d") {
+  if (event.key === "ArrowRight") {
     // console.log('right');
     movePlayerRight();
     // createBullet()
   }
-  if (event.key === "w") {
+  if (event.key === "ArrowUp") {
     // console.log("space")
     movePlayerUp();
   }
-  if (event.key === "s") {
+  if (event.key === "ArrowDown") {
     // console.log("space")
     movePlayerDown();
   }
