@@ -83,6 +83,22 @@ body{
   gap: 50px;
   /* bottom: 0; */
 }
+.restartContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  width: 60vh;
+  position: absolute;
+  height: 60vh;
+  z-index: 5;
+  top: 20%;
+  font-size: 50px;
+  border-radius: 25px;;
+  background-color: rgb(69, 67, 67);
+  border: 1px solid white;
+}
 
 *{
   /* border: 1px solid red; */

@@ -1,5 +1,11 @@
 let gameScreen = document.body;
+
 let yourCharacter = document.querySelector("#player");
+
+let gameOver = document.querySelector(".restartContainer");
+// console.log(scoreBoard)
+
+gameOver.style.display = "none";
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "a") {
@@ -28,7 +34,7 @@ function createChar() {
   let makeChar = document.createElement("div");
   makeChar.setAttribute("id", "player");
   gameScreen.append(makeChar);
-  setInterval(createBullet, 0.25);
+  setInterval(createBullet, 0.2);
 }
 createChar();
 
@@ -99,7 +105,7 @@ for (let i = 0; i < 16; i++) {
   createPole();
 }
 let poles = document.querySelectorAll(".pole");
-console.log(poles);
+// console.log(poles);
 let ids = [
   {
     "id": "poleOne",
@@ -231,7 +237,7 @@ function createPrisoner() {
       hp -= 20;
       setScore();
       if (hp == 0) {
-        alert("YOU LOSE")
+        gameOver.style.display = "flex";
       }
     }
   }
@@ -260,3 +266,6 @@ function setScore() {
 }
 
 setScore()
+
+let restart = document.querySelector("#restart")
+restart.addEventListener("click", function start() {location.reload()})
