@@ -1,0 +1,89 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#player{
+  position: absolute;
+  display:flex;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(#00d9ff, #ffffff);  
+  border: 3px solid white;
+  left: 10%;
+  top: 10%;
+  transition: all 2s;
+  z-index: 2;
+  border-radius: 200px;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+#bullet{
+  display: flex;
+  position:absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 200px;
+  /* background-color: #0ff; */
+  box-shadow: 0px 0px 5px 5px rgb(0, 255, 255, 0.2);
+  transition: all 5s;a
+}
+.pole{
+  display: flex;
+  background-color: white;
+  width:20px;
+  height:20px;
+  border-radius: 20px;
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -10px;
+  box-shadow: 0px 0px 5px 5px rgb(255, 255, 255, 0.8);
+}
+
+.prisoner{
+  display: flex;
+  position:absolute;
+  width: 30px;
+  height: 30px;
+  background-color:purple;
+  border-radius: 30px;
+  transition: all 15s;
+  margin-left: -15px;
+  margin-top: -15px;
+  box-shadow: 0 0 20px rgb(255, 255, 255),
+  0 0 40px rgb(127, 153, 127), 
+  0 0 60px rgb(127, 153, 127), 
+  0 0 80px rgb(127, 153, 127), 
+  0 0 120px rgb(127, 153, 127),
+  0 0 220px rgb(127, 153, 127),
+  0 0 320px rgb(127, 153, 127);
+}
+
+.scoreContainer{
+  display: flex;
+  width: 20vh;
+  height: 20vh;
+  border: 1px solid rgb(109, 108, 108);
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  border-radius: 20px;
+  z-index: 0;
+  color: white;
+  flex-direction: column;
+  gap: 50px;
+  /* bottom: 0; */
+}
+
+*{
+  /* border: 1px solid red; */
+}
