@@ -4,12 +4,13 @@ html{
 }
 body{
   display: flex;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(250, 239, 239);
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
   overflow:hidden;
+  font-family: 'Silkscreen', cursive;
 }
 
 #player{
@@ -18,7 +19,7 @@ body{
   width: 30px;
   height: 30px;
   background: radial-gradient(#00d9ff, #ffffff);  
-  border: 3px solid white;
+  border: 3px solid black;
   left: 10%;
   top: 10%;
   transition: all 2s;
@@ -36,18 +37,19 @@ body{
   border-radius: 200px;
   /* background-color: #0ff; */
   box-shadow: 0px 0px 5px 5px rgb(0, 255, 255, 0.2);
-  transition: all 5s;a
+  transition: all 5s;
 }
 .pole{
   display: flex;
   background-color: white;
+  border: 2px solid rgb(192, 187, 187);
   width:20px;
   height:20px;
   border-radius: 20px;
   position: absolute;
   margin-left: -10px;
   margin-top: -10px;
-  box-shadow: 0px 0px 5px 5px rgb(255, 255, 255, 0.8);
+  /* box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.8); */
 }
 
 .prisoner{
@@ -56,30 +58,25 @@ body{
   width: 30px;
   height: 30px;
   background-color:purple;
+  border: 2.5px solid rgb(133, 133, 133);
   border-radius: 30px;
   transition: all 15s;
   margin-left: -15px;
   margin-top: -15px;
-  box-shadow: 0 0 20px rgb(255, 255, 255),
-  0 0 40px rgb(127, 153, 127), 
-  0 0 60px rgb(127, 153, 127), 
-  0 0 80px rgb(127, 153, 127), 
-  0 0 120px rgb(127, 153, 127),
-  0 0 220px rgb(127, 153, 127),
-  0 0 320px rgb(127, 153, 127);
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
 .scoreContainer{
   display: flex;
-  width: 20vh;
-  height: 20vh;
-  border: 1px solid rgb(109, 108, 108);
+  width: 15vh;
+  height: 15vh;
+  /* border: 3px solid rgb(109, 108, 108); */
   justify-content: center;
   align-items: center;
   position:absolute;
   border-radius: 20px;
   z-index: 0;
-  color: white;
+  color: grey;
   flex-direction: column;
   gap: 50px;
   /* bottom: 0; */
@@ -89,18 +86,43 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: white;
-  width: 60vh;
+  color: rgb(68, 68, 68);
+  width:55vh;
   position: absolute;
-  height: 60vh;
+  height: 55vh;
   z-index: 5;
   top: 20%;
-  font-size: 50px;
+  font-size: 40px;
   border-radius: 25px;;
-  background-color: rgb(69, 67, 67);
-  border: 1px solid white;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  box-shadow: 
+  1px 1px 0px black,
+  2px 2px 0px black,
+  3px 3px 0px black,
+  4px 4px 0px black,
+  5px 5px 0px black,
+  6px 6px 0px black,
+  7px 7px 0px black,
+  8px 8px 0px black
+  ;
+}
+.restartText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-*{
-  /* border: 1px solid red; */
+#restart{
+  color: rgb(68, 68, 68);
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 
+  1px 1px 0px black,
+  2px 2px 2px black,
+  3px 3px 0px black,
+  4px 4px 0px black;
 }

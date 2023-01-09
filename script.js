@@ -3,6 +3,7 @@ let gameScreen = document.body;
 let yourCharacter = document.querySelector("#player");
 
 let gameOver = document.querySelector(".restartContainer");
+let gameText = document.querySelector(".restartText");
 // console.log(scoreBoard)
 
 gameOver.style.display = "none";
@@ -238,6 +239,7 @@ function createPrisoner() {
       setScore();
       if (hp == 0) {
         gameOver.style.display = "flex";
+        gameText.innerText = `Game Over! Your Score:${ points }`;
       }
     }
   }
