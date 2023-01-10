@@ -4,7 +4,7 @@ html{
 }
 body{
   display: flex;
-  background-color: rgb(250, 239, 239);
+  background-color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -125,4 +125,28 @@ body{
   2px 2px 2px black,
   3px 3px 0px black,
   4px 4px 0px black;
+}
+
+.explode{
+display: flex;
+height: 40px;
+width: 40px;
+/* background-color: orange; */
+/* border: 2px solid rgb(250, 255, 119); */
+border-radius: 100px;
+z-index: 5;
+position: absolute;
+animation: explode .5s ease-in-out ;
+}
+@keyframes explode {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(2.5);
+  }
+ 
+  100%{
+    transform: scale(0);
+  }
 }

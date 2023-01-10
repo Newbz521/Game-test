@@ -106,6 +106,7 @@ for (let i = 0; i < 16; i++) {
   createPole();
 }
 let poles = document.querySelectorAll(".pole");
+// poles.addEventListener("click", function(e){console.log("clicked")} )
 // console.log(poles);
 let ids = [
   {
@@ -189,12 +190,19 @@ let ids = [
     "left": 90,
   },
 ];
+function clickPlayerMove(e) {
+  let player = document.querySelector("#player");
+  console.log(e.target.getBoundingClientRect())
+ 
+  player.style.left = e.target.getBoundingClientRect().left + 10 + "px";
+  player.style.top = e.target.getBoundingClientRect().top + 10 + "px";
+}
 for (let i = 0; i < poles.length; i++) {
   // poles[i].setAttribute("id", ids[i].id);
   poles[i].style.left = ids[i].left + "%";
   poles[i].style.top = ids[i].top + "%";
+  poles[i].addEventListener("click", clickPlayerMove)
 }
-
 function createPrisoner() {
   let makePrison = document.createElement("div")
   makePrison.classList.add("prisoner")
@@ -213,11 +221,24 @@ function createPrisoner() {
     makePrison.style.left = targetPoles.getBoundingClientRect().left + "px";
     makePrison.style.top = targetPoles.getBoundingClientRect().top + "px";
   }
+  function createExplosion(a) {
+    let explosion = document.createElement("div");
+    explosion.classList.add("explode")
+    explosion.style.left = a.getBoundingClientRect().left + "px";
+    explosion.style.top = a.getBoundingClientRect().top + "px";
+    explosion.style.border = a.style.background + 2 + "px" + " solid";
+    gameScreen.append(explosion)
+    setTimeout(() => {
+      explosion.remove();
+    }, 500);
+  }
+
   function checkCollision() {
     let laser = document.querySelectorAll("#bullet")
     let player = document.querySelector("#player")
     laser.forEach((data) => {
       if (isCollide(makePrison.getBoundingClientRect(), data.getBoundingClientRect())) {
+        createExplosion(makePrison)
         makePrison.remove()
         targetPoles.style.background = "white";
         points += 10
@@ -227,13 +248,16 @@ function createPrisoner() {
     if (isCollide(makePrison.getBoundingClientRect(), targetPoles.getBoundingClientRect())) {
       console.log("touchdown!")
       targetPoles.style.background = "white";
+      // createExplosion(makePrison)
       makePrison.remove()
       points -= 5
       setScore()
     }
     if (isCollide(makePrison.getBoundingClientRect(), player.getBoundingClientRect())) {
-      console.log("you're hit!d")
+      console.log("you're hit!")
       targetPoles.style.background = "white";
+      // makePrison.classList.add("explode")
+      createExplosion(makePrison)
       makePrison.remove()
       hp -= 20;
       setScore();
