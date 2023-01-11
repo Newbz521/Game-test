@@ -27,10 +27,10 @@ body{
   background-color: var(--board);
   z-index: 1;
   box-shadow: 
-  .5vw .5vw 0px var(--shadow),
-  .75vw .75vw 0px var(--shadow),
-  1vw 1vw 0px var(--shadow),
-  1.25vw 1.25vw 0px var(--shadow);
+  .5vh .5vh 0px var(--shadow),
+  .75vh .75vh 0px var(--shadow),
+  1vh 1vh 0px var(--shadow),
+  1.25vh 1.25vh 0px var(--shadow);
 }
 button:hover {
   cursor: pointer
@@ -77,9 +77,9 @@ button:hover {
   margin-top: -1.5vh;
   z-index: 2;
   box-shadow: 
-  inset .5vw .5vw 0px var(--shadow),
-  inset .75vw .75vw 0px var(--shadow),
-  inset 1vw 1vw 0px var(--shadow);
+  inset .5vh .5vh 0px var(--shadow),
+  inset .75vh .75vh 0px var(--shadow),
+  inset 1vh 1vh 0px var(--shadow);
   /* box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.8); */
 }
 
@@ -114,9 +114,9 @@ button:hover {
   flex-direction: row;
   padding: .5vh;
   box-shadow: 
-  .5vw .5vw 0px var(--shadow),
-  .75vw .75vw 0px var(--shadow),
-  1vw 1vw 0px var(--shadow);
+  .5vh .5vh 0px var(--shadow),
+  .75vh .75vh 0px var(--shadow),
+  1vh 1vh 0px var(--shadow);
   z-index: 0;
   border-radius: 1vh;
   /* bottom: 0; */
@@ -139,10 +139,9 @@ button:hover {
   border: 2px solid var(--shadow);
   /* gap: 20px; */
   box-shadow: 
-  .5vw .5vw 0px var(--shadow),
-  .75vw .75vw 0px var(--shadow),
-  1vw 1vw 0px var(--shadow),
-  1.25vw 1.25vw 0px var(--shadow);
+  .5vh .5vh 0px var(--shadow),
+  .75vh .75vh 0px var(--shadow),
+  1vh 1vh 0px var(--shadow);
  
 }
 .question:hover{
@@ -168,9 +167,9 @@ button:hover {
   flex-direction: row;
   padding: .5vh;
   box-shadow: 
-  .5vw .5vw 0px var(--shadow),
-  .75vw .75vw 0px var(--shadow),
-  1vw 1vw 0px var(--shadow);
+  .5vh .5vh 0px var(--shadow),
+  .75vh .75vh 0px var(--shadow),
+  1vh 1vh 0px var(--shadow);
   z-index: 0;
   border-radius: 1vh;
   /* bottom: 0; */
@@ -196,10 +195,9 @@ button:hover {
   border: 2px solid var(--shadow);
   /* gap: 20px; */
   box-shadow: 
-  .5vw .5vw 0px var(--shadow),
-  .75vw .75vw 0px var(--shadow),
-  1vw 1vw 0px var(--shadow),
-  1.25vw 1.25vw 0px var(--shadow);
+  .5vh .5vh 0px var(--shadow),
+  .75vh .75vh 0px var(--shadow),
+  1vh 1vh 0px var(--shadow);
  
 }
 .restartText{
@@ -222,10 +220,9 @@ button:hover {
   margin: 1vh;
   padding: 1vh;
   box-shadow: 
-  .5vw .5vw 0px var(--shadow),
-  .75vw .75vw 0px var(--shadow),
-  1vw 1vw 0px var(--shadow),
-  1.25vw 1.25vw 0px var(--shadow);
+  .5vh .5vh 0px var(--shadow),
+  .75vh .75vh 0px var(--shadow),
+  1vh 1vh 0px var(--shadow);
 }
 #continue,#info-restart{
   display: none;
