@@ -90,7 +90,7 @@ function createBullet() {
   gameScreen.append(makeBullet);
   setTimeout(() => {
     makeBullet.remove();
-  }, 1500);
+  }, 600);
 }
 
 function createPole() {
@@ -247,7 +247,7 @@ function createPrisoner() {
       // console.log("touchdown!")
       targetPoles.style.border =  .25 + "vh " + "solid " + "black";
       makePrison.remove()
-      hp -= 20;
+      hp -= 10;
       setScore();
       if (hp == 0) {
         let restart = document.querySelector("#restart")
