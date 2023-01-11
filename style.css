@@ -32,7 +32,9 @@ body{
   1vw 1vw 0px var(--shadow),
   1.25vw 1.25vw 0px var(--shadow);
 }
-
+button:hover {
+  cursor: pointer
+}
 #player{
   position: absolute;
   display:flex;
