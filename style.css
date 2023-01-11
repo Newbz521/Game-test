@@ -4,7 +4,7 @@ html{
 }
 body{
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(245, 235, 251);
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -12,100 +12,187 @@ body{
   overflow:hidden;
   font-family: 'Silkscreen', cursive;
 }
+.start-block{
+  display: flex;
+  width: 92vw;
+  height: 90vh;
+  border-radius: 2vh;
+  border: .25vh solid black;
+  background-color: white;
+  z-index: 1;
+  box-shadow: 
+  .5vw .5vw 0px black,
+  .75vw .75vw 0px black,
+  1vw 1vw 0px black,
+  1.25vw 1.25vw 0px black;
+}
 
 #player{
   position: absolute;
   display:flex;
-  width: 30px;
-  height: 30px;
+  width: 3vh;
+  height: 3vh;
   background: radial-gradient(#00d9ff, #ffffff);  
   border: 3px solid black;
   left: 10%;
   top: 10%;
   transition: all 2s;
-  z-index: 2;
-  border-radius: 200px;
-  margin-left: -15px;
-  margin-top: -15px;
+  /* z-index: 2; */
+  border-radius: 1000px;
+  margin-left: calc(-1.5vh + 2px);
+  margin-top: calc(-1.5vh + 2px);
+  z-index: 4;
 }
 #bullet{
   display: flex;
   position:absolute;
-  width: 15px;
-  height: 15px;
+  width: 2vh;
+  height: 2vh;
   background: white;
-  border-radius: 200px;
+  border-radius: 1000px;
   /* background-color: #0ff; */
-  box-shadow: 0px 0px 5px 5px rgb(0, 255, 255, 0.2);
+  border: 2px solid rgb(82, 82, 82);
+  /* box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2); */
   transition: all 5s;
+  z-index: 3;
 }
 .pole{
   display: flex;
-  background-color: white;
-  border: 2px solid rgb(192, 187, 187);
-  width:20px;
-  height:20px;
-  border-radius: 20px;
+  /* background-color: white; */
+  background-color: rgb(245, 235, 251);
+  border: .25vh solid rgb(0, 0, 0);
+  width:3vh;
+  height:3vh;
+  border-radius: 1000px;
   position: absolute;
-  margin-left: -10px;
-  margin-top: -10px;
+  margin-left: -1.5vh;
+  margin-top: -1.5vh;
+  z-index: 2;
+  box-shadow: 
+  inset .5vw .5vw 0px black,
+  inset .75vw .75vw 0px black,
+  inset 1vw 1vw 0px black;
   /* box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.8); */
 }
 
 .prisoner{
   display: flex;
   position:absolute;
-  width: 30px;
-  height: 30px;
+  width: 3vh;
+  height: 3vh;
   background-color:purple;
-  border: 2.5px solid rgb(133, 133, 133);
-  border-radius: 30px;
-  transition: all 15s;
-  margin-left: -15px;
-  margin-top: -15px;
+  /* border: 2.5px solid rgb(133, 133, 133); */
+  border-radius: 1000px;
+  transition: all 14s;
+  margin-left: -1.5vh;
+  margin-top: -1.5vh;
   box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  z-index: 2;
 }
-
-.scoreContainer{
+.question{
   display: flex;
-  width: 15vh;
-  height: 15vh;
-  /* border: 3px solid rgb(109, 108, 108); */
-  justify-content: center;
+  width: 5vw;
+  height: fit-content;
+  border: .25vh solid rgb(0, 0, 0);
+  background-color: white;
+  justify-content:space-evenly;
   align-items: center;
   position:absolute;
-  border-radius: 20px;
+  border-radius: .5vh;
+  font-size: 2vh;
+  top:.5vh;
+  right: 4vw;
+  color: rgb(52, 52, 52);
+  flex-direction: row;
+  padding: .5vh;
+  box-shadow: 
+  .5vw .5vw 0px black,
+  .75vw .75vw 0px black,
+  1vw 1vw 0px black;
   z-index: 0;
-  color: grey;
-  flex-direction: column;
-  gap: 50px;
+  border-radius: 1vh;
   /* bottom: 0; */
+}
+#how-to{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(44, 44, 44);
+  text-align: center;
+  width:40vh;
+  position: absolute;
+  height: 40vh;
+  z-index: 5;
+  top: 30vh;
+  font-size: 1.8vh;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  /* gap: 20px; */
+  box-shadow: 
+  .5vw .5vw 0px black,
+  .75vw .75vw 0px black,
+  1vw 1vw 0px black,
+  1.25vw 1.25vw 0px black;
+ 
+}
+.question:hover{
+  cursor: pointer;
+}
+.pole:hover{
+  cursor: pointer;
+}
+.scoreContainer{
+  display: flex;
+  width: 75vw;
+  height: fit-content;
+  border: .25vh solid rgb(0, 0, 0);
+  background-color: white;
+  justify-content:space-evenly;
+  align-items: center;
+  position:absolute;
+  border-radius: .5vh;
+  font-size: 2vh;
+  left: 5vw;
+  top:.5vh;
+  color: rgb(84, 83, 83);
+  flex-direction: row;
+  padding: .5vh;
+  box-shadow: 
+  .5vw .5vw 0px black,
+  .75vw .75vw 0px black,
+  1vw 1vw 0px black;
+  z-index: 0;
+  border-radius: 1vh;
+  /* bottom: 0; */
+}
+.hp, .score{
+  flex-direction: row;
+  width: fit-content;
 }
 .restartContainer{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: rgb(68, 68, 68);
-  width:55vh;
+  color: rgb(44, 44, 44);
+  width:40vh;
   position: absolute;
-  height: 55vh;
+  height: 40vh;
   z-index: 5;
-  top: 20%;
-  font-size: 40px;
-  border-radius: 25px;;
+  top: 30vh;
+  font-size: 3vh;
+  border-radius: 25px;
   background-color: rgb(255, 255, 255);
   border: 2px solid black;
+  /* gap: 20px; */
   box-shadow: 
-  1px 1px 0px black,
-  2px 2px 0px black,
-  3px 3px 0px black,
-  4px 4px 0px black,
-  5px 5px 0px black,
-  6px 6px 0px black,
-  7px 7px 0px black,
-  8px 8px 0px black
-  ;
+  .5vw .5vw 0px black,
+  .75vw .75vw 0px black,
+  1vw 1vw 0px black,
+  1.25vw 1.25vw 0px black;
+ 
 }
 .restartText{
   display: flex;
@@ -114,19 +201,29 @@ body{
   text-align: center;
 }
 
-#restart{
-  color: rgb(68, 68, 68);
+#restart, #start, #continue, #info-restart{
+  color: rgb(44, 44, 44);
+  font-family: 'Silkscreen', cursive;
   margin: 10px;
   padding: 10px;
   background-color: white;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  border-radius: 1vh;
+  font-size: 2vh;
+  margin: 1vh;
+  padding: 1vh;
   box-shadow: 
-  1px 1px 0px black,
-  2px 2px 2px black,
-  3px 3px 0px black,
-  4px 4px 0px black;
+  .5vw .5vw 0px black,
+  .75vw .75vw 0px black,
+  1vw 1vw 0px black,
+  1.25vw 1.25vw 0px black;
 }
-
+#continue,#info-restart{
+  display: none;
+}
+#continue:hover, #restart:hover{
+  cursor: pointer;
+}
 .explode{
 display: flex;
 height: 40px;
@@ -134,7 +231,7 @@ width: 40px;
 /* background-color: orange; */
 /* border: 2px solid rgb(250, 255, 119); */
 border-radius: 100px;
-z-index: 5;
+z-index: 2;
 position: absolute;
 animation: explode .5s ease-in-out ;
 }
@@ -143,10 +240,11 @@ animation: explode .5s ease-in-out ;
     transform: scale(1);
   }
   50%{
-    transform: scale(2.5);
+    transform: scale(2);
   }
  
   100%{
     transform: scale(0);
   }
 }
+

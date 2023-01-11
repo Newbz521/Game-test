@@ -1,5 +1,4 @@
 let gameScreen = document.body;
-
 let yourCharacter = document.querySelector("#player");
 
 let gameOver = document.querySelector(".restartContainer");
@@ -88,8 +87,8 @@ function createBullet() {
   let player = document.querySelector("#player").getBoundingClientRect();
   let makeBullet = document.createElement("div");
   makeBullet.setAttribute("id", "bullet");
-  makeBullet.style.left = player.left + player.width / 4 + "px";
-  makeBullet.style.top = player.top + player.height / 4 + "px";
+  makeBullet.style.left = player.left + player.width / 5 + "px";
+  makeBullet.style.top = player.top + player.height / 5 + "px";
   gameScreen.append(makeBullet);
   setTimeout(() => {
     makeBullet.remove();
@@ -192,10 +191,10 @@ let ids = [
 ];
 function clickPlayerMove(e) {
   let player = document.querySelector("#player");
-  console.log(e.target.getBoundingClientRect())
+  // console.log(e.target.getBoundingClientRect())
  
-  player.style.left = e.target.getBoundingClientRect().left + 10 + "px";
-  player.style.top = e.target.getBoundingClientRect().top + 10 + "px";
+  player.style.left = `calc(${e.target.getBoundingClientRect().left}px + 1.5vh)`;
+  player.style.top = `calc(${e.target.getBoundingClientRect().top}px + 1.5vh )`;
 }
 for (let i = 0; i < poles.length; i++) {
   // poles[i].setAttribute("id", ids[i].id);
@@ -207,26 +206,27 @@ function createPrisoner() {
   let makePrison = document.createElement("div")
   makePrison.classList.add("prisoner")
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  makePrison.style.background = "#" + randomColor;
+  makePrison.style.background = `radial-gradient(circle at 1vh 1vh, #${randomColor}, black)`;
+  // `radial-gradient(circle at 100px 100px, #${randomColor}, #000)`;
   makePrison.style.left = 50 + "%";
   makePrison.style.top = 50 + "%";
   gameScreen.append(makePrison);
   let randomIndex = Math.floor(Math.random() * ids.length)
   let targetPoles = document.querySelectorAll(".pole")[randomIndex]
   
-  targetPoles.style.background = "#" + randomColor;
+  targetPoles.style.border = .25 + "vh " + "solid " + "#" + randomColor;
   console.log(makePrison.getBoundingClientRect(),  targetPoles.getBoundingClientRect())
 
   function change() {
-    makePrison.style.left = targetPoles.getBoundingClientRect().left + "px";
-    makePrison.style.top = targetPoles.getBoundingClientRect().top + "px";
+    makePrison.style.left = `calc(${targetPoles.getBoundingClientRect().left}px + 1.5vh)`;
+    makePrison.style.top = `calc(${targetPoles.getBoundingClientRect().top}px + 1.5vh)`;
   }
   function createExplosion(a) {
     let explosion = document.createElement("div");
     explosion.classList.add("explode")
     explosion.style.left = a.getBoundingClientRect().left + "px";
     explosion.style.top = a.getBoundingClientRect().top + "px";
-    explosion.style.border = a.style.background + 2 + "px" + " solid";
+    explosion.style.border = "black " + 4 + "px" + " solid";
     gameScreen.append(explosion)
     setTimeout(() => {
       explosion.remove();
@@ -240,14 +240,14 @@ function createPrisoner() {
       if (isCollide(makePrison.getBoundingClientRect(), data.getBoundingClientRect())) {
         createExplosion(makePrison)
         makePrison.remove()
-        targetPoles.style.background = "white";
+        targetPoles.style.border = .25 + "vh " + "solid " + "black";;
         points += 10
         setScore();
       }
     })
     if (isCollide(makePrison.getBoundingClientRect(), targetPoles.getBoundingClientRect())) {
       console.log("touchdown!")
-      targetPoles.style.background = "white";
+      targetPoles.style.border =  .25 + "vh " + "solid " + "black";
       // createExplosion(makePrison)
       makePrison.remove()
       points -= 5
@@ -255,14 +255,16 @@ function createPrisoner() {
     }
     if (isCollide(makePrison.getBoundingClientRect(), player.getBoundingClientRect())) {
       console.log("you're hit!")
-      targetPoles.style.background = "white";
+      targetPoles.style.border = .25 + "vh " + "solid " + "black";
       // makePrison.classList.add("explode")
       createExplosion(makePrison)
       makePrison.remove()
       hp -= 20;
       setScore();
       if (hp == 0) {
+        let restart = document.querySelector("#restart")
         gameOver.style.display = "flex";
+        restart.style.display = "flex";
         gameText.innerText = `Game Over! Your Score:${ points }`;
       }
     }
@@ -279,7 +281,7 @@ function isCollide(a, b) {
     a.x > b.x + b.width
   );
 }
-setInterval(createPrisoner, 5000)
+// setInterval(createPrisoner, 3000)
 
 let points = 0;
 let hp = 100;
@@ -292,6 +294,22 @@ function setScore() {
 }
 
 setScore()
-
+let start = document.querySelector("#start")
 let restart = document.querySelector("#restart")
+let infoRestart= document.querySelector("#info-restart")
+let info = document.querySelector("#how-to")
+let resume = document.querySelector("#continue")
+let question = document.querySelector(".question")
+start.addEventListener("click", function run() {
+  info.style.display = "none"
+  start.style.display = "none"
+  setInterval(createPrisoner, 2000)
+})
+question.addEventListener("click", function toggle() {
+  info.style.display = "flex"
+  infoRestart.style.display = "flex"
+  resume.style.display = "flex"
+})
+infoRestart.addEventListener("click", function start() {location.reload()})
+resume.addEventListener("click", function close(){info.style.display = "none"})
 restart.addEventListener("click", function start() {location.reload()})
