@@ -58,7 +58,6 @@ function movePlayerLeft() {
 function movePlayerRight() {
   let player = document.querySelector("#player");
   let playerLocation = player.getBoundingClientRect();
-  // console.log(playerLocation);
   if (playerMoveLeftRight < 80) {
     playerMoveLeftRight += 80 / 3;
     player.style.left = `calc(${playerStartHorrizontal}% + ${playerMoveLeftRight}%)`;
@@ -67,7 +66,6 @@ function movePlayerRight() {
 function movePlayerUp() {
   let player = document.querySelector("#player");
   let playerLocation = player.getBoundingClientRect();
-  // console.log(playerLocation);
   if (playerMoveUpDown > 0) {
     playerMoveUpDown -= 80 / 3;
     player.style.top = `calc(${playerStartVertical}% + ${playerMoveUpDown}%)`;
@@ -246,15 +244,14 @@ function createPrisoner() {
       }
     })
     if (isCollide(makePrison.getBoundingClientRect(), targetPoles.getBoundingClientRect())) {
-      console.log("touchdown!")
+      // console.log("touchdown!")
       targetPoles.style.border =  .25 + "vh " + "solid " + "black";
-      // createExplosion(makePrison)
       makePrison.remove()
       points -= 5
       setScore()
     }
     if (isCollide(makePrison.getBoundingClientRect(), player.getBoundingClientRect())) {
-      console.log("you're hit!")
+      // console.log("you're hit!")
       targetPoles.style.border = .25 + "vh " + "solid " + "black";
       // makePrison.classList.add("explode")
       createExplosion(makePrison)
@@ -281,7 +278,7 @@ function isCollide(a, b) {
     a.x > b.x + b.width
   );
 }
-// setInterval(createPrisoner, 3000)
+
 
 let points = 0;
 let hp = 100;
