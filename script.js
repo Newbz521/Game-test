@@ -247,15 +247,6 @@ function createPrisoner() {
       // console.log("touchdown!")
       targetPoles.style.border =  .25 + "vh " + "solid " + "black";
       makePrison.remove()
-      points -= 5
-      setScore()
-    }
-    if (isCollide(makePrison.getBoundingClientRect(), player.getBoundingClientRect())) {
-      // console.log("you're hit!")
-      targetPoles.style.border = .25 + "vh " + "solid " + "black";
-      // makePrison.classList.add("explode")
-      createExplosion(makePrison)
-      makePrison.remove()
       hp -= 20;
       setScore();
       if (hp == 0) {
@@ -264,6 +255,16 @@ function createPrisoner() {
         restart.style.display = "flex";
         gameText.innerText = `Game Over! Your Score:${ points }`;
       }
+    }
+    if (isCollide(makePrison.getBoundingClientRect(), player.getBoundingClientRect())) {
+      // console.log("you're hit!")
+      targetPoles.style.border = .25 + "vh " + "solid " + "black";
+      // makePrison.classList.add("explode")
+      createExplosion(makePrison)
+      makePrison.remove()
+      points += 1;
+      setScore();
+      
     }
   }
   setInterval(checkCollision, 20)
@@ -300,7 +301,7 @@ let question = document.querySelector(".question")
 start.addEventListener("click", function run() {
   info.style.display = "none"
   start.style.display = "none"
-  setInterval(createPrisoner, 2000)
+  setInterval(createPrisoner, 1000)
 })
 question.addEventListener("click", function toggle() {
   info.style.display = "flex"
