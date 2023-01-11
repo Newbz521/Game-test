@@ -57,7 +57,7 @@ body{
   background: white;
   border-radius: 1000px;
   /* background-color: #0ff; */
-  border: 2px solid rgb(82, 82, 82);
+  border: 2px solid var(--bg);
   /* box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2); */
   transition: all 5s;
   z-index: 3;
